@@ -27,6 +27,60 @@
   .nav-item {
     @apply px-10 py-2 rounded-full text-white/70 text-sm font-semibold hover:bg-white/10 hover:text-white transition  duration-300;
   }
-  
+  .nav-cart {
+    @apply px-10 py-2 rounded-full text-accent/70 text-sm font-semibold hover:bg-accent/70 hover:text-accent transition  duration-300;
+  }
 }
 
+@keyframes sparkle {
+  0% {
+    transform: scale(1);
+    filter: brightness(100%);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: brightness(150%);
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(100%);
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.shoppingCart {
+  animation: sparkle 1.5s infinite ease-in-out,
+             wave 2s infinite ease-in-out,
+             glow 2s infinite alternate;
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.shoppingCart:hover {
+  transform: scale(1.1);
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 2.5px rgba(52, 152, 219, 0.5),
+                0 0 5px rgba(52, 152, 219, 0.5),
+                0 0 7.5px rgba(52, 152, 219, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.7),
+                0 0 10px rgba(52, 152, 219, 0.7),
+                0 0 15px rgba(52, 152, 219, 0.5);
+  }
+}

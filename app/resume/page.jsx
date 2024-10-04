@@ -1,10 +1,10 @@
 "use client"; // จำเป็นสำหรับการทำงานใน Next.js ที่ใช้ Client-side components
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
-
+import { FiShoppingCart } from "react-icons/fi"; // นำเข้าไอคอนตะกร้าสินค้า
 // Data for Book Reads section with Like feature
 const books = {
   title: "Book Reads",
@@ -14,34 +14,102 @@ const books = {
     {
       title: "Money 101 by โค้ชหนุ่ม",
       img: "/assets/Books/money101.jpg",
+      storeLinks: {
+        store1:
+          "https://www.tiktok.com/@servicemarketingonline?gad_source=1&gclid=Cj0KCQjwpP63BhDYARIsAOQkATag9cRDYLf9K768WGEZ4Lf4RcwHwjagcqPPB4al1M4MTMEzMjfEfBUaAp82EALw_wcB",
+        store2: "https://shopee.co.th/",
+        store3: "https://s.lazada.co.th/s.qyI6N?cc",
+      },
     },
     {
       title: "Generative Deep Learning",
       img: "/assets/Books/deeplearning.jpg",
-    },
-    {
-      title: "Originals",
-      img: "/assets/Books/originals.jpg",
+      storeLinks: {
+        store1:
+          "https://www.tiktok.com/@servicemarketingonline?gad_source=1&gclid=Cj0KCQjwpP63BhDYARIsAOQkATag9cRDYLf9K768WGEZ4Lf4RcwHwjagcqPPB4al1M4MTMEzMjfEfBUaAp82EALw_wcB",
+        store2: "https://shopee.co.th/",
+        store3: "https://s.lazada.co.th/s.qyI6N?cc",
+      },
     },
     {
       title: "โคโนะ เก็นโตะ ราชาสมองเพรช",
       img: "/assets/Books/diamonbrain.jpg",
+      storeLinks: {
+        store1:
+          "https://www.tiktok.com/@servicemarketingonline?gad_source=1&gclid=Cj0KCQjwpP63BhDYARIsAOQkATag9cRDYLf9K768WGEZ4Lf4RcwHwjagcqPPB4al1M4MTMEzMjfEfBUaAp82EALw_wcB",
+        store2: "https://shopee.co.th/",
+        store3: "https://s.lazada.co.th/s.qyI6N?cc",
+      },
     },
     {
       title: "Richdad Poordad",
       img: "/assets/Books/richdadfordad.jpg",
+      storeLinks: {
+        store1:
+          "https://www.tiktok.com/@servicemarketingonline?gad_source=1&gclid=Cj0KCQjwpP63BhDYARIsAOQkATag9cRDYLf9K768WGEZ4Lf4RcwHwjagcqPPB4al1M4MTMEzMjfEfBUaAp82EALw_wcB",
+        store2: "https://shopee.co.th/",
+        store3: "https://s.lazada.co.th/s.qyI6N?cc",
+      },
     },
     {
       title: "The Richest man in babyloan",
       img: "/assets/Books/therichesman.jpg",
+      storeLinks: {
+        store1:
+          "https://www.tiktok.com/@servicemarketingonline?gad_source=1&gclid=Cj0KCQjwpP63BhDYARIsAOQkATag9cRDYLf9K768WGEZ4Lf4RcwHwjagcqPPB4al1M4MTMEzMjfEfBUaAp82EALw_wcB",
+        store2: "https://shopee.co.th/",
+        store3: "https://s.lazada.co.th/s.qyI6N?cc",
+      },
     },
     {
       title: "เพาะหุ้นเป็นเห็นผลยั่งยืน",
       img: "/assets/Books/stocktree.jpg",
+      storeLinks: {
+        store1:
+          "https://www.tiktok.com/@servicemarketingonline?gad_source=1&gclid=Cj0KCQjwpP63BhDYARIsAOQkATag9cRDYLf9K768WGEZ4Lf4RcwHwjagcqPPB4al1M4MTMEzMjfEfBUaAp82EALw_wcB",
+        store2: "https://shopee.co.th/",
+        store3: "https://s.lazada.co.th/s.qyI6N?cc",
+      },
     },
     {
       title: "STOP Checking the price",
       img: "/assets/Books/stop.jpg",
+      storeLinks: {
+        store1:
+          "https://www.tiktok.com/@servicemarketingonline?gad_source=1&gclid=Cj0KCQjwpP63BhDYARIsAOQkATag9cRDYLf9K768WGEZ4Lf4RcwHwjagcqPPB4al1M4MTMEzMjfEfBUaAp82EALw_wcB",
+        store2: "https://shopee.co.th/",
+        store3: "https://s.lazada.co.th/s.qyI6N?cc",
+      },
+    },
+    {
+      title: "Originals",
+      img: "/assets/Books/originals.jpg",
+      storeLinks: {
+        store1:
+          "https://www.tiktok.com/@servicemarketingonline?gad_source=1&gclid=Cj0KCQjwpP63BhDYARIsAOQkATag9cRDYLf9K768WGEZ4Lf4RcwHwjagcqPPB4al1M4MTMEzMjfEfBUaAp82EALw_wcB",
+        store2: "https://shopee.co.th/",
+        store3: "https://s.lazada.co.th/s.qyI6N?cc",
+      },
+    },
+    {
+      title: "Physiology of moeny",
+      img: "/assets/Books/Physiology of moeny.jpg",
+      storeLinks: {
+        store1:
+          "https://www.tiktok.com/@servicemarketingonline?gad_source=1&gclid=Cj0KCQjwpP63BhDYARIsAOQkATag9cRDYLf9K768WGEZ4Lf4RcwHwjagcqPPB4al1M4MTMEzMjfEfBUaAp82EALw_wcB",
+        store2: "https://shopee.co.th/",
+        store3: "https://s.lazada.co.th/s.qyI6N?cc",
+      },
+    },
+    {
+      title: "CHIP WAR by Chris Miller",
+      img: "/assets/Books/chip-war.jpg",
+      storeLinks: {
+        store1:
+          "https://www.tiktok.com/@servicemarketingonline?gad_source=1&gclid=Cj0KCQjwpP63BhDYARIsAOQkATag9cRDYLf9K768WGEZ4Lf4RcwHwjagcqPPB4al1M4MTMEzMjfEfBUaAp82EALw_wcB",
+        store2: "https://shopee.co.th/",
+        store3: "https://s.lazada.co.th/s.qyI6N?cc",
+      },
     },
   ],
 };
@@ -174,42 +242,7 @@ const about = {
 
 // Main component
 const Resume = () => {
-  const [likes, setLikes] = useState(Array(books.items.length).fill(0)); // State to track the number of likes
-  const [liked, setLiked] = useState(Array(books.items.length).fill(false)); // State to track if liked or not
   const [selectedBook, setSelectedBook] = useState(null); // ใช้สำหรับการติดตามหนังสือที่ถูกคลิก
-
-
-  useEffect(() => {
-    const storedLikes = JSON.parse(localStorage.getItem("likes"));
-    const storedLiked = JSON.parse(localStorage.getItem("liked"));
-
-    if (storedLikes && storedLiked) {
-      setLikes(storedLikes);
-      setLiked(storedLiked);
-    }
-  }, []);
-
-  
-
-  const toggleLike = (index) => {
-    const updatedLikes = [...likes];
-    const updatedLiked = [...liked];
-
-    if (updatedLiked[index]) {
-      updatedLikes[index] -= 1;
-    } else {
-      updatedLikes[index] += 1;
-    }
-
-    updatedLiked[index] = !updatedLiked[index];
-    setLikes(updatedLikes);
-    setLiked(updatedLiked);
-
-
-     // บันทึกข้อมูล likes และ liked ลงใน localStorage
-     localStorage.setItem("likes", JSON.stringify(updatedLikes));
-     localStorage.setItem("liked", JSON.stringify(updatedLiked));
-  };
 
   const openModal = (book) => {
     setSelectedBook(book);
@@ -294,31 +327,41 @@ const Resume = () => {
                           />
                         </div>
                         <h3 className="text-xl text-center">{book.title}</h3>
-                        <div className="flex items-center gap-3">
-                          <button
-                            className={`flex items-center gap-2 px-2 py-1 rounded-full border transition-all duration-300 ${
-                              liked[index]
-                                ? "border-blue-500 bg-[#2c2c34]"
-                                : "border-gray-400"
-                            }`}
-                            onClick={() => toggleLike(index)}
-                            aria-label="Like button"
+                        <div className="flex items-center gap-3 justify-center">
+                          {/* เพิ่มไอคอนตะกร้าสินค้า พร้อมอนิเมชัน */}
+                          <motion.a
+                            href={book.storeLinks.store1}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`flex items-center gap-2 px-5 py-2 rounded-full border transition-all duration-300 shoppingCart nav-cart`}
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 0.9 }}
+                            aria-label="Shop 1"
                           >
-                            <span
-                              className={`text-xl ${
-                                liked[index] ? "text-pink-500" : "text-gray-400"
-                              }`}
-                            >
-                              ❤️
-                            </span>
-                            <span
-                              className={`text-sm ${
-                                liked[index] ? "text-white" : "text-gray-400"
-                              }`}
-                            >
-                              {likes[index]}
-                            </span>
-                          </button>
+                            <FiShoppingCart className="text-xl text-white" />
+                          </motion.a>
+                          <motion.a
+                            href={book.storeLinks.store2}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`flex items-center gap-2 px-5 py-2 rounded-full border transition-all duration-300 shoppingCart nav-cart `}
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 0.9 }}
+                            aria-label="Shop 2"
+                          >
+                            <FiShoppingCart className="text-xl text-white" />
+                          </motion.a>
+                          <motion.a
+                            href={book.storeLinks.store3}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={`flex items-center gap-2 px-5 py-2 rounded-full border transition-all duration-300 shoppingCart nav-cart`}
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 0.9 }}
+                            aria-label="Shop 3"
+                          >
+                            <FiShoppingCart className="text-xl text-white" />
+                          </motion.a>
                         </div>
                       </li>
                     ))}
