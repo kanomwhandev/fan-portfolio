@@ -1,6 +1,6 @@
 "use client"; // จำเป็นสำหรับการทำงานใน Next.js ที่ใช้ Client-side components
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -175,8 +175,21 @@ const about = {
 // Main component
 const Resume = () => {
   const [likes, setLikes] = useState(Array(books.items.length).fill(0)); // State to track the number of likes
-  const [liked, setLiked] = useState([false, false, false, false]); // State to track if liked or not
+  const [liked, setLiked] = useState(Array(books.items.length).fill(false)); // State to track if liked or not
   const [selectedBook, setSelectedBook] = useState(null); // ใช้สำหรับการติดตามหนังสือที่ถูกคลิก
+
+
+  useEffect(() => {
+    const storedLikes = JSON.parse(localStorage.getItem("likes"));
+    const storedLiked = JSON.parse(localStorage.getItem("liked"));
+
+    if (storedLikes && storedLiked) {
+      setLikes(storedLikes);
+      setLiked(storedLiked);
+    }
+  }, []);
+
+  
 
   const toggleLike = (index) => {
     const updatedLikes = [...likes];
@@ -191,6 +204,11 @@ const Resume = () => {
     updatedLiked[index] = !updatedLiked[index];
     setLikes(updatedLikes);
     setLiked(updatedLiked);
+
+
+     // บันทึกข้อมูล likes และ liked ลงใน localStorage
+     localStorage.setItem("likes", JSON.stringify(updatedLikes));
+     localStorage.setItem("liked", JSON.stringify(updatedLiked));
   };
 
   const openModal = (book) => {
