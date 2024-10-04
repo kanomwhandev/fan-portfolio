@@ -13,35 +13,35 @@ const books = {
   items: [
     {
       title: "Money 101 by โค้ชหนุ่ม",
-      img: "/assets/money101.jpg",
+      img: "/assets/Books/money101.jpg",
     },
     {
       title: "Generative Deep Learning",
-      img: "/assets/deeplearning.jpg",
+      img: "/assets/Books/deeplearning.jpg",
     },
     {
       title: "Originals",
-      img: "/assets/originals.jpg",
+      img: "/assets/Books/originals.jpg",
     },
     {
       title: "โคโนะ เก็นโตะ ราชาสมองเพรช",
-      img: "/assets/diamonbrain.jpg",
+      img: "/assets/Books/diamonbrain.jpg",
     },
     {
       title: "Richdad Poordad",
-      img: "/assets/richdadfordad.jpg",
+      img: "/assets/Books/richdadfordad.jpg",
     },
     {
       title: "The Richest man in babyloan",
-      img: "/assets/therichesman.jpg",
+      img: "/assets/Books/therichesman.jpg",
     },
     {
       title: "เพาะหุ้นเป็นเห็นผลยั่งยืน",
-      img: "/assets/stocktree.jpg",
+      img: "/assets/Books/stocktree.jpg",
     },
     {
       title: "STOP Checking the price",
-      img: "/assets/stop.jpg",
+      img: "/assets/Books/stop.jpg",
     },
   ],
 };
@@ -153,7 +153,7 @@ const skills = {
         { emoji: "📄", name: "Google Workspace" },
         { emoji: "🌐", name: "Meta" },
         { emoji: "📝", name: "Notion" },
-      ],  
+      ],
     },
   ],
 };

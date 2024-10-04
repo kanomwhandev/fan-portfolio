@@ -55,7 +55,7 @@ const Contact = () => {
 
         <div className="flex justify-center mt-4">
           <img
-            src="/office.gif" // ระบุที่อยู่ของรูปภาพตามความต้องการ
+            src="assets/Profile/office.gif" // ระบุที่อยู่ของรูปภาพตามความต้องการ
             alt="Contact illustration"
             className="w-1/2 h-auto object-cover"
           />

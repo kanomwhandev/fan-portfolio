@@ -55,7 +55,7 @@ const personalWorks = [
   },
 ];
 
-const work = () => {
+const Work = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   // ฟังก์ชันเพื่อเปิด modal เมื่อคลิกที่ภาพ
@@ -265,4 +265,4 @@ const work = () => {
   );
 };
 
-export default work;
+export default Work;
