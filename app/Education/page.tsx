@@ -43,6 +43,8 @@ const certificates = [
   "/assets/Cert/Google_Interland_Affan-Samaeng_Certificate_of_Kindness-1.png",
   "/assets/Cert/Google_Interland_Affan-Samaeng_Certificate_of_Smartness (1)-1.png",
   "/assets/Cert/Google_Interland_Affan-Samaeng_Certificate_of_Strongness-1.png",
+  "/assets/Cert/DataRockie School - Mini Data Science Bootcamp 2024 - 2024-04-29.png",
+  "/assets/Cert/Certificate.png",
   // เพิ่มเส้นทางของ certificates อื่น ๆ ที่นี่
 ];
 

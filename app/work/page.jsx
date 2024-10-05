@@ -47,11 +47,11 @@ const personalWorks = [
     facebook: "https://www.facebook.com/Just1clicked/",
   },
   {
-    title: "Mjwork Shop",
+    title: "MJ Shop",
     description:
       "My digital arts shop on AdobeStock. The product was conducted by me and produced by AI",
     image: "/assets/work/no.png", // ระบุ path ของรูปภาพ
-    shop: "https://contributor.stock.adobe.com/th/portfolio",
+    shop: "https://stock.adobe.com/th/contributor/212096923/mj?load_type=author&prev_url=detail",
   },
 ];
 
