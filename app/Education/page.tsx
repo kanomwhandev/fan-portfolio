@@ -107,7 +107,7 @@ const Education: React.FC = () => {
               <motion.div 
                 className="bg-accent rounded-full p-2 mr-4 flex-shrink-0" // flex-shrink-0 เพื่อไม่ให้ไอคอนย่อ
                 variants={itemVariants}
-              >
+              >  
                 {entry.icon}
               </motion.div>
               

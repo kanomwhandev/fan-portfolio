@@ -6,6 +6,46 @@ import { FiDownload } from "react-icons/fi";
 import Social from "../components/Social";
 import Photo from "../components/Photo";
 import { motion, AnimatePresence } from "framer-motion"; // ใช้ AnimatePresence เพื่อ handle motion สำหรับการแสดงและซ่อน
+import { Waves, Fish, Anchor } from "lucide-react";
+import Link from "next/link";
+import { Kanit } from "next/font/google";
+
+const kanit = Kanit({
+  subsets: ["thai"],
+  weight: ["400", "700"],
+});
+const buttonVariants = {
+  initial: {
+    background: "linear-gradient(90deg, #00c6ff 0%, #0072ff 100%)",
+    boxShadow: "0 0 10px rgba(0, 198, 255, 0.5)",
+    scale: 1,
+  },
+  animate: {
+    scale: [1, 1.05, 1],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      repeatType: "reverse",
+    },
+  },
+  hover: {
+    background: "linear-gradient(90deg, #00c6ff 0%, #0072ff 100%)",
+    boxShadow: "0 0 10px #00c6ff, 0 0 20px #00c6ff, 0 0 30px #00c6ff",
+    transition: {
+      duration: 0.3,
+    },
+  },
+  tap: { scale: 0.95 },
+};
+
+const iconVariants = {
+  hidden: { opacity: 0, y: 0 },
+  visible: {
+    opacity: [0, 1, 0],
+    y: [0, -50, -100],
+    transition: { duration: 0.5 },
+  },
+};
 
 const Home = () => {
   const [downloadCount, setDownloadCount] = useState(0); // เก็บจำนวนการดาวน์โหลด
@@ -85,7 +125,34 @@ const Home = () => {
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span>Software Developer</span>
+            <motion.button
+              className={`relative px-14 py-5 rounded-full mb-8 mx-auto text-lg font-semibold text-center mt-8 xl:mt-0 text-white ${kanit.className}`}
+              variants={buttonVariants}
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
+              whileTap="tap"
+            >
+              <Link href="/work">กดเพื่อดูผลงาน</Link>
+              <motion.div
+                className="absolute top-0 left-1/2 transform -translate-x-1/2"
+                initial="hidden"
+                whileTap="visible"
+              >
+                <motion.div variants={iconVariants}>
+                  <Waves size={24} />
+                </motion.div>
+                <motion.div variants={iconVariants}>
+                  <Fish size={24} />
+                </motion.div>
+                <motion.div variants={iconVariants}>
+                  <Anchor size={24} />
+                </motion.div>
+              </motion.div>
+            </motion.button>
+            <div>
+              <span className="text-accent ">Software Developer</span>
+            </div>
             <h1 className="h1">
               Hello I'm <br />{" "}
               <span className="text-accent">Affan Samaeng</span>

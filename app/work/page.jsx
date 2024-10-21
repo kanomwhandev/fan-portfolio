@@ -37,6 +37,13 @@ const projects = [
     image: "/assets/work/apirest.png",
     github: "https://github.com/kanomwhandev/ResterauntApi",
   },
+  {
+    title: "DataSci",
+    description: "This is try to get data from ResterauntAPI.",
+    stack: ["HTML5", "CSS", "JavaScript"],
+    image: "/assets/work/apirest.png",
+    github: "https://github.com/kanomwhandev/ResterauntApi",
+  }
 ];
 
 const personalWorks = [
@@ -53,6 +60,7 @@ const personalWorks = [
     image: "/assets/work/no.png", // ระบุ path ของรูปภาพ
     shop: "https://stock.adobe.com/th/contributor/212096923/mj?load_type=author&prev_url=detail",
   },
+  
 ];
 
 const Work = () => {
