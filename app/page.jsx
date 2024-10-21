@@ -151,7 +151,7 @@ const Home = () => {
               </motion.div>
             </motion.button>
             <div>
-              <span className="text-accent ">Software Developer</span>
+              <span>Software Developer</span>
             </div>
             <h1 className="h1">
               Hello I'm <br />{" "}

@@ -24,7 +24,8 @@ const projects = [
   },
   {
     title: "Mind Heart",
-    description: "this website made you better fleeling , it's can help you write something stuggle on you mind to note",
+    description:
+      "this website made you better fleeling , it's can help you write something stuggle on you mind to note",
 
     stack: ["HTML5", "CSS", "JavaScript"],
     image: "/assets/work/mind.png",
@@ -38,18 +39,29 @@ const projects = [
     github: "https://github.com/kanomwhandev/ResterauntApi",
   },
   {
-    title: "DataSci",
-    description: "This is try to get data from ResterauntAPI.",
-    stack: ["HTML5", "CSS", "JavaScript"],
-    image: "/assets/work/apirest.png",
-    github: "https://github.com/kanomwhandev/ResterauntApi",
-  }
+    title: "DataScience",
+    description:
+      "This is try to analysis about IMDB rating of Producer and Report of Hapiness of The world in 2021",
+    stack: [
+      "Python",
+      "Statics",
+      "Pandas",
+      "Numpy",
+      "Matplotlib",
+      "Seaborn",
+      "google colab",
+    ],
+    image: "/assets/work/datascigdp.png",
+    github:
+      "https://colab.research.google.com/drive/1TJSl5OMPH83S9U-80cARV0h5Otu0l3lL?usp=sharing",
+  },
 ];
 
 const personalWorks = [
   {
     title: "Just1Click",
-    description: "AI Knowledge sharing in Facebook, IG and Art Gallery Website, please like and follow me ",
+    description:
+      "AI Knowledge sharing in Facebook, IG and Art Gallery Website, please like and follow me ",
     image: "/assets/work/j1c.jpg", // ระบุ path ของรูปภาพ
     facebook: "https://www.facebook.com/Just1clicked/",
   },
@@ -60,7 +72,6 @@ const personalWorks = [
     image: "/assets/work/no.png", // ระบุ path ของรูปภาพ
     shop: "https://stock.adobe.com/th/contributor/212096923/mj?load_type=author&prev_url=detail",
   },
-  
 ];
 
 const Work = () => {
