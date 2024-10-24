@@ -105,8 +105,8 @@ const Home = () => {
 
       // ทำการดาวน์โหลดไฟล์
       const link = document.createElement("a");
-      link.href = "/Affan_Resume.png"; // ใส่ path ของ CV ของคุณ
-      link.download = "Affan_Resume.png";
+      link.href = "/Resume_Affan.png"; // ใส่ path ของ CV ของคุณ
+      link.download = "Resume_Affan.png";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -151,7 +151,7 @@ const Home = () => {
               </motion.div>
             </motion.button>
             <div>
-              <span>Software Developer</span>
+              <span>Data & Software Engineer</span>
             </div>
             <h1 className="h1">
               Hello I'm <br />{" "}
@@ -161,7 +161,7 @@ const Home = () => {
               Technology Leader and Innovator
             </h2>
             <p className="xl:pt-5 xl:pb-5 mx-auto leading-[3]">
-              Driving Innovation through Technology, Blockchain, and AI
+              Driving Innovation through Data & Technology, Blockchain, and AI
             </p>
             <div className="flex flex-col xl:flex-row items-center">
               <Button
@@ -170,7 +170,7 @@ const Home = () => {
                 className="uppercase flex items-center gap-2 hover:text-accent"
                 onClick={handleDownload}
               >
-                <span>Download CV</span>
+                <span>Download Resume</span>
                 <FiDownload className="text-xl" />
               </Button>
               <div className="mb-8 xl:mb-0 "></div>
